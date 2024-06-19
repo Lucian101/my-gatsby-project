@@ -1,0 +1,36 @@
+/* src/pages/index.css */
+
+.section {
+    padding: 100px 20px; /* Add top padding to avoid being hidden under the nav bar */
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .section:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+  
+  .video-section {
+    margin-top: 60px; /* Adjust if necessary to match your nav bar height */
+    padding: 20px;
+    background-color: #000;
+  }
+  
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+  }
+  
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
