@@ -1,83 +1,71 @@
-/* src/components/Navigation.css */
-
+/* Basic styling for the navigation container */
 .navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  color: #fff;
 }
 
-.nav-left {
+/* Styling for the navigation buttons container */
+.nav-buttons {
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
-.nav-logo img {
-  height: 50px; /* Adjust as needed */
-  margin-right: 20px;
-}
-
-.nav-buttons {
-  display: flex;
-  gap: 10px;
-}
-
+/* Styling for the navigation buttons */
 .nav-button {
-  color: #fff;
-  text-decoration: none;
-  padding: 10px 15px;
-  background-color: #007acc;
+  background-color: #007BFF; /* Primary color */
+  color: white;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.nav-button:hover {
-  background-color: #005f99;
-}
-
-.nav-right {
-  top: 10px;
-  right: 20px;
-}
-
-.nav-right span {
-  color: #fff;
-  text-decoration: none;
-  padding: 10px 15px;
-  background-color: #007acc;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  font-size: 16px;
   cursor: pointer;
-  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-align: center;
+  text-decoration: none; /* Remove underline */
+  display: inline-block;
 }
 
-.nav-right span:hover {
-  background-color: #005f99;
+/* Hover effect */
+.nav-button:hover {
+  background-color: #0056b3; /* Darker shade for hover effect */
+  transform: translateY(-3px); /* Lift the button slightly */
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .navigation {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+/* Active effect */
+.nav-button:active {
+  background-color: #004085; /* Even darker shade for active state */
+  transform: translateY(1px); /* Slightly lower the button on click */
+}
 
-  .nav-left {
-    width: 100%;
-    justify-content: space-between;
-  }
-
+/* Responsive design */
+@media (max-width: 600px) {
   .nav-buttons {
-    flex-wrap: wrap;
+    flex-direction: column;
+    display: none; /* Hide the menu initially on small screens */
+  }
+
+  .nav-buttons.open {
+    display: flex; /* Show the menu when open */
   }
 
   .nav-button {
     margin: 5px 0;
+    width: 100%;
   }
 
-  .nav-right {
-    position: static;
-    margin-top: 10px;
+  .hamburger {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 601px) {
+  .hamburger {
+    display: none; /* Hide the hamburger menu on large screens */
   }
 }

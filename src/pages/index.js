@@ -1,9 +1,8 @@
-// src/pages/index.js
-
 import React, { useState } from 'react';
 import Layout from '../components/layout';
 import { Fade, Zoom } from 'react-awesome-reveal';
 import './index.css'; // Ensure this is the correct path to your CSS file
+import './styles.css';
 
 const IndexPage = () => {
   const [language, setLanguage] = useState('en');
@@ -15,8 +14,8 @@ const IndexPage = () => {
   const content = {
     en: {
       welcome: "Welcome to My Portfolio",
-      about: "About Me",
-      aboutContent: "Nestled in the medium-sized town of Galați, near the borders of Eastern Europe and within earshot of the war in Ukraine, our story begins on the banks of the Danube. Amidst the echoes of distant drones, a derelict field lay forgotten, overrun with debris. But where others saw ruin, we saw potential for renewal and wellbeing. Our journey started with a vision to salvage this neglected space and repurpose it for the community. With a rich history in basketball, we dedicated part of the field to a new half-court, bringing the sport back to life for enthusiasts and newcomers alike. Closer to the river, we transformed another section into a welcoming BBQ area, encouraging social gatherings and outdoor enjoyment. Here in Galați, we believe in the power of attentive citizenship. Our efforts emphasize ecology, sustainability, and health, fostering a community that thrives on active living and mutual respect for our environment. This space is a testament to what can be achieved when we come together with a shared purpose: to create a healthier, more sustainable future for all..",
+      about: "About our project",
+      aboutContent: "Nestled in the medium-sized town of Galați, near the borders of Eastern Europe and within earshot of the war in Ukraine, our story begins on the banks of the Danube. Amidst the echoes of distant drones, a derelict field lay forgotten, overrun with debris. But where others saw ruin, we saw potential for renewal and wellbeing. Our journey started with a vision to salvage this neglected space and repurpose it for the community. With a rich history in basketball, we dedicated part of the field to a new half-court, bringing the sport back to life for enthusiasts and newcomers alike. Closer to the river, we transformed another section into a welcoming BBQ area, encouraging social gatherings and outdoor enjoyment. Here in Galați, we believe in the power of attentive citizenship. Our efforts emphasize ecology, sustainability, and health, fostering a community that thrives on active living and mutual respect for our environment. This space is a testament to what can be achieved when we come together with a shared purpose: to create a healthier, more sustainable future for all.",
       services: "Services",
       servicesContent: "This is the services section of the portfolio.",
       events: "Events",
@@ -44,10 +43,10 @@ const IndexPage = () => {
       socialContent: "Aceasta este secțiunea de buletin informativ a portofoliului."
     }
   };
-  
 
   return (
     <Layout currentLanguage={language} toggleLanguage={toggleLanguage}>
+      <div id="home"></div>
       <div id="video" className="video-section">
         <div className="video-container">
           <iframe
@@ -63,7 +62,9 @@ const IndexPage = () => {
         <Fade>
           <Zoom>
             <h1>{content[language].about}</h1>
-            <p>{content[language].aboutContent}</p>
+            <div className="contentSection">
+              <p>{content[language].aboutContent}</p>
+            </div>
           </Zoom>
         </Fade>
       </div>
@@ -71,7 +72,9 @@ const IndexPage = () => {
         <Fade>
           <Zoom>
             <h1>{content[language].services}</h1>
-            <p>This is the services section content.</p>
+            <div className="contentSection">
+              <p>{content[language].servicesContent}</p>
+            </div>
           </Zoom>
         </Fade>
       </div>
@@ -79,7 +82,9 @@ const IndexPage = () => {
         <Fade>
           <Zoom>
             <h1>{content[language].events}</h1>
-            <p>This is the events section content.</p>
+            <div className="contentSection">
+              <p>{content[language].eventsContent}</p>
+            </div>
           </Zoom>
         </Fade>
       </div>
@@ -87,7 +92,9 @@ const IndexPage = () => {
         <Fade>
           <Zoom>
             <h1>{content[language].aboutme}</h1>
-            <p>This is the about me section content.</p>
+            <div className="contentSection">
+              <p>{content[language].aboutmeContent}</p>
+            </div>
           </Zoom>
         </Fade>
       </div>
@@ -95,7 +102,9 @@ const IndexPage = () => {
         <Fade>
           <Zoom>
             <h1>{content[language].shop}</h1>
-            <p>This is the shop section content.</p>
+            <div className="contentSection">
+              <p>{content[language].shopContent}</p>
+            </div>
           </Zoom>
         </Fade>
       </div>
@@ -103,7 +112,9 @@ const IndexPage = () => {
         <Fade>
           <Zoom>
             <h1>{content[language].social}</h1>
-            <p>This is the follow us section content.</p>
+            <div className="contentSection">
+              <p>{content[language].socialContent}</p>
+            </div>
           </Zoom>
         </Fade>
       </div>

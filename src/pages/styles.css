@@ -1,0 +1,234 @@
+/* src/styles.css */
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(45deg, #f3ec78, #af4261);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  
+  .hover-effect:hover {
+    color: #af4261;
+    transition: color 0.3s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .animated-text {
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+  
+  .custom-font {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .uppercase {
+    text-transform: uppercase;
+  }
+  
+  .lowercase {
+    text-transform: lowercase;
+  }
+  
+  .capitalize {
+    text-transform: capitalize;
+  }
+  
+  .letter-spacing {
+    letter-spacing: 2px;
+  }
+  
+  .line-height {
+    line-height: 1.5;
+  }
+  
+/* index.css or styles.css */
+.aboutContent {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  max-width: 800px;
+  text-align: justify;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.aboutContent:hover {
+  transform: scale(1.02);
+  opacity: 0.95;
+}
+
+.aboutContent p {
+  margin: 0 0 10px 0;
+  padding: 0;
+  line-height: 1.8;
+}
+
+.servicesContent {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  max-width: 800px;
+  text-align: justify;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.servicesContent:hover {
+  transform: scale(1.02);
+  opacity: 0.95;
+}
+
+.servicesContent p {
+  margin: 0 0 10px 0;
+  padding: 0;
+  line-height: 1.8;
+}
+
+.eventsContent {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  max-width: 800px;
+  text-align: justify;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.eventsContent:hover {
+  transform: scale(1.02);
+  opacity: 0.95;
+}
+
+.eventsContent p {
+  margin: 0 0 10px 0;
+  padding: 0;
+  line-height: 1.8;
+}
+
+.aboutmeContent {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  max-width: 800px;
+  text-align: justify;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.aboutmeContent:hover {
+  transform: scale(1.02);
+  opacity: 0.95;
+}
+
+.aboutmeContent p {
+  margin: 0 0 10px 0;
+  padding: 0;
+  line-height: 1.8;
+}
+
+.shopContent {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  max-width: 800px;
+  text-align: justify;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.shopContent:hover {
+  transform: scale(1.02);
+  opacity: 0.95;
+}
+
+.shopContent p {
+  margin: 0 0 10px 0;
+  padding: 0;
+  line-height: 1.8;
+}
+
+.socialContent {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  max-width: 800px;
+  text-align: justify;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.socialContent:hover {
+  transform: scale(1.02);
+  opacity: 0.95;
+}
+
+.socialContent p {
+  margin: 0 0 10px 0;
+  padding: 0;
+  line-height: 1.8;
+}
+
+/* index.css or styles.css */
+.contentSection {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  max-width: 800px;
+  text-align: justify;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.contentSection:hover {
+  transform: scale(1.02);
+  opacity: 0.95;
+}
+
+.contentSection p {
+  margin: 0 0 10px 0;
+  padding: 0;
+  line-height: 1.8;
+}
