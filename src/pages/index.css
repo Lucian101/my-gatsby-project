@@ -1,36 +1,72 @@
 /* src/pages/index.css */
 
 .section {
-    padding: 100px 20px; /* Add top padding to avoid being hidden under the nav bar */
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
-    text-align: center;
+  padding: 100px 20px; /* Add top padding to avoid being hidden under the nav bar */
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.section:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.video-container {
+  position: relative;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2em;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  z-index: 10;
+}
+
+.video-section, .video-container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mute-toggle {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
   }
-  
-  .section:nth-child(odd) {
-    background-color: #f9f9f9;
-  }
-  
-  .video-section {
-    margin-top: 60px; /* Adjust if necessary to match your nav bar height */
-    padding: 20px;
-    background-color: #000;
-  }
-  
-  .video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;
-    background: #000;
-  }
-  
-  .video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  
+}
+
+.overlay-text {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.overlay-text:not(:empty) {
+  opacity: 1;
+}

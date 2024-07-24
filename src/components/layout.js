@@ -6,6 +6,7 @@ import Helmet from 'react-helmet';
 import Navigation from './Navigation';
 import { Link as ScrollLink } from 'react-scroll';
 import logo from '../images/logo.png';
+import Footer from './Footer';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -58,19 +59,20 @@ const Layout = ({ children, currentLanguage, toggleLanguage }) => (
     <header>
       <nav>
         <div className="nav-left">
-          <ScrollLink to="home" smooth={true} duration={500} id="logo">
-            <img src={logo} alt="Home" />
-          </ScrollLink>
+          
           <Navigation currentLanguage={currentLanguage} toggleLanguage={toggleLanguage} />
         </div>
+        
         <div className="nav-right">
-          <span onClick={toggleLanguage}>
-            {currentLanguage === 'ro' ? 'EN' : 'RO'}
-          </span>
-        </div>
+  <span onClick={toggleLanguage} className="language-selector">
+    {currentLanguage === 'ro' ? 'EN' : 'RO'}
+  </span>
+</div>
+
       </nav>
     </header>
     <main>{children}</main>
+    <Footer />
   </>
 );
 
