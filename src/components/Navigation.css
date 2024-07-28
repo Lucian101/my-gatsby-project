@@ -41,6 +41,11 @@
   transform: translateY(1px); /* Slightly lower the button on click */
 }
 
+.logo {
+  width: 60px;
+  height: 60px;
+}
+
 /* Hamburger menu icon */
 .hamburger {
   display: none;
@@ -70,7 +75,7 @@
   height: 100%;
   z-index: 999;
   transition: left 0.3s ease;
-  padding-top: 60px;
+  padding-top: 90px;
 }
 
 .side-menu.open {

@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     justify-content: space-between; /* Space between for left and right alignment */
     align-items: center;
-    padding: 1rem;
+    padding: 0.5rem;
   }
   .nav-left {
     display: flex;
