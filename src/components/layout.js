@@ -4,8 +4,6 @@ import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 import Helmet from 'react-helmet';
 import Navigation from './Navigation';
-import { Link as ScrollLink } from 'react-scroll';
-import logo from '../images/logo.png';
 import Footer from './Footer';
 
 const GlobalStyle = createGlobalStyle`
