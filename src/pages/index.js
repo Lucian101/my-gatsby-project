@@ -1,20 +1,17 @@
-import React, { useState, useRef, useEffect  } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Layout from '../components/layout';
 import { Fade, Zoom } from 'react-awesome-reveal';
 import './index.css'; // Ensure this is the correct path to your CSS file
 import './styles.css';
 import { FaYoutube, FaTiktok, FaInstagram } from 'react-icons/fa';
-import videoSource from '../components/Untitled.mp4';
 
 const IndexPage = () => {
   const [language, setLanguage] = useState('en');
-  
+  const videoRef = useRef(null);
 
   const toggleLanguage = () => {
     setLanguage(language === 'en' ? 'ro' : 'en');
   };
-
-  
 
   const textSequence = [
     { text: 'If you can make someone laugh you can make him do anything.', duration: 3000 },
@@ -28,6 +25,7 @@ const IndexPage = () => {
   ];
 
   const [overlayText, setOverlayText] = useState(textSequence[0].text);
+  const [isMuted, setIsMuted] = useState(true);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -37,9 +35,60 @@ const IndexPage = () => {
         return textSequence[nextIndex].text;
       });
     }, 3000);  // Change every 3 seconds
-  
+
     return () => clearInterval(intervalId);
   }, [textSequence]);
+
+  useEffect(() => {
+    // Load the YouTube IFrame Player API
+    const tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // This function creates an <iframe> (and YouTube player)
+    // after the API code downloads.
+    window.onYouTubeIframeAPIReady = function () {
+      videoRef.current = new window.YT.Player('player', {
+        height: '390',
+        width: '640',
+        videoId: 'dNs4ANbcl_o', // Replace with your YouTube video ID
+        playerVars: {
+          'autoplay': 1,
+          'controls': 0,
+          'loop': 1,
+          'playlist': 'dNs4ANbcl_o' // Necessary for loop to work
+        },
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    };
+
+    function onPlayerReady(event) {
+      event.target.mute();
+      setIsMuted(true);
+      event.target.playVideo();
+    }
+
+    function onPlayerStateChange(event) {
+      if (event.data === window.YT.PlayerState.ENDED) {
+        event.target.playVideo();
+      }
+    }
+  }, []);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      if (isMuted) {
+        videoRef.current.unMute();
+      } else {
+        videoRef.current.mute();
+      }
+      setIsMuted(!isMuted);
+    }
+  };
 
   const content = {
     en: {
@@ -80,48 +129,20 @@ const IndexPage = () => {
 
   const iconStyle = { margin: '0 10px', color: '#000', fontSize: '40px' };
 
-  const [isMuted, setIsMuted] = useState(true);
-const videoRef = useRef(null);
-
-const toggleMute = () => {
-  if (videoRef.current) {
-    videoRef.current.muted = !videoRef.current.muted;
-    setIsMuted(videoRef.current.muted);
-  }
-};
-
-useEffect(() => {
-  if (videoRef.current) {
-    videoRef.current.play().catch(error => {
-      console.error("Video playback failed:", error);
-    });
-  }
-}, []);
-
   return (
     <Layout currentLanguage={language} toggleLanguage={toggleLanguage}>
       <div id="home"></div>
       <div id="video" className="video-section">
-  <div className="video-container">
-    <video 
-      ref={videoRef}
-      autoPlay 
-      loop 
-      muted 
-      playsInline
-      className="background-video"
-    >
-      <source src={videoSource} type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <div className="overlay-text" key={overlayText}>
-  {overlayText}
-</div>
-    <button onClick={toggleMute} className="mute-toggle">
-      {isMuted ? 'Unmute' : 'Mute'}
-    </button>
-  </div>
-</div>
+        <div className="video-container">
+          <div id="player" className="background-video"></div>
+          <div className="overlay-text" key={overlayText}>
+            {overlayText}
+          </div>
+          <button onClick={toggleMute} className="mute-toggle">
+            {isMuted ? 'Unmute' : 'Mute'}
+          </button>
+        </div>
+      </div>
       <div id="about" className="section">
         <Fade>
           <Zoom>

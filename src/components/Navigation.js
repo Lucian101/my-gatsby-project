@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 import './Navigation.css';
-import logo from '../images/logo.PNG';
+import logo from '../images/logo.png';
 
 const Navigation = ({ currentLanguage, toggleLanguage }) => {
   const [menuOpen, setMenuOpen] = useState(false);
