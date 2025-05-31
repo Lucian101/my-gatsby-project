@@ -3,8 +3,7 @@ import Layout from '../components/layout';
 import { Fade, Zoom } from 'react-awesome-reveal';
 import './index.css'; // Ensure this is the correct path to your CSS file
 import './styles.css';
-import { FaYoutube, FaTiktok, FaInstagram } from 'react-icons/fa';
-
+ 
 const IndexPage = () => {
   const [language, setLanguage] = useState('en');
   const videoRef = useRef(null);
@@ -102,10 +101,7 @@ const IndexPage = () => {
       aboutme: "About me",
       aboutmeContent: "Hi, I'm Ionuț Tăbăcaru and I'm the founder of this project. My journey began with a deep passion for nature and a commitment to sustainability. I believe in the transformative energy of direct contact with the natural world and how it can inspire and rejuvenate us. Beyond my love for nature, I am dedicated to creating vibrant communities. I thrive on bringing people together, fostering connections, and emphasizing the importance of education. Through this project, I aim to blend these passions, providing enriching experiences that highlight our shared values and collective creativity. Let's connect and create  extraordinary things together!",
       shop: "Support us",
-      shopContent: "Unlock your potential and create a sustainable future with expert consulting and advisory services. Specializing in eco-sustainability, sports performance, and life coaching, we offer personalized strategies to help you achieve your goals and make a positive impact. Whether you're looking to enhance your personal well-being, boost your athletic performance, or implement sustainable practices, we provide the guidance and support you need. Transform your life and the world around you—start your journey to success today! For further details please contact us on any of our social media accounts. You can also support our project with a one-time donation on our IBAN or through Revolut. IBAN EUR (BIC/SWIFT Code: REVOLT21): LT533250040670605509--IBAN RON: RO57BREL0005505362900100; Revolut: https://revolut.me/tabacalkr",
-      social: "Follow us",
-      socialContent: "Follow us for expert tips, inspirational content, and practical advice to enhance your life and well-being. Engage with our community, get your questions answered, and stay updated on the latest trends. Contact us directly through any platform for personalized guidance—connect with us today!"
-    },
+      shopContent: "Unlock your potential and create a sustainable future with expert consulting and advisory services. Specializing in eco-sustainability, sports performance, and life coaching, we offer personalized strategies to help you achieve your goals and make a positive impact. Whether you're looking to enhance your personal well-being, boost your athletic performance, or implement sustainable practices, we provide the guidance and support you need. Transform your life and the world around you—start your journey to success today! For further details please contact us on any of our social media accounts. You can also support our project with a one-time donation on our IBAN or through Revolut. IBAN EUR (BIC/SWIFT Code: REVOLT21): LT533250040670605509--IBAN RON: RO57BREL0005505362900100; Revolut: https://revolut.me/tabacalkr"},
     ro: {
       welcome: "Bine ați venit la portofoliul meu",
       about: "Despre proiect",
@@ -117,17 +113,9 @@ const IndexPage = () => {
       aboutme: "Despre mine",
       aboutmeContent: "Salut, sunt Ionuț Tăbăcaru și sunt fondatorul acestui proiect. Călătoria mea a început datorită unei pasiuni profunde pentru natură, laolaltă cu un angajament față de sustenabilitate. Cred în energia transformatoare a contactului direct cu universul naturii și în modul în care acesta ne poate inspira și întineri. Dincolo de această dragostea, sunt pasionat de crearea de comunități. Mă bucur să aduc oamenii împreună, să stimulez conexiunile și să subliniez importanța educației. Prin acest proiect, îmi propun să îmbin aceste pasiuni, oferind experiențe îmbogățitoare care evidențiază valorile noastre comune și creativitatea colectivă. Hai să ne conectăm și să creăm împreună lucruri extraordinare!",
       shop: "Susține-ne",
-      shopContent: "Deblocați-vă potențialul și creați un viitor durabil cu servicii de consultanță de specialitate. Aflațik mai multe despre sustenabilitatea ecologică, performanță sportivă și life-coaching, oferim strategii personalizate pentru a vă ajuta să vă atingeți obiectivele și să aveți un impact pozitiv. Indiferent dacă doriți să vă îmbunătățiți starea de spirit, să vă creșteți performanța atletică sau să implementați practici durabile, vă oferim îndrumarea și sprijinul de care aveți nevoie. Transformă-ți viața și lumea din jurul tău — începe-ți călătoria către succes astăzi! Pentru mai multe detalii, vă rugăm să ne contactați pe oricare dintre conturile noastre de socializare. De asemenea, puteți susține proiectul nostru cu o donație unică pe IBAN-ul nostru sau prin Revolut. IBAN EUR (Cod BIC/SWIFT: REVOLT21): LT533250040670605509--IBAN RON: RO57BREL0005505362900100; Revolut: https://revolut.me/tabacalkr",
-      social: "Urmărește-ne",
-      socialContent: "Urmăriți-ne pentru a afla mai multe idei, conținut inspirațional și sfaturi practice pentru a vă îmbunătăți viața și bunăstarea. Interacționați cu comunitatea noastră, primiți răspunsuri la întrebările dvs. și rămâneți la curent cu cele mai recente tendințe. Contactați-ne prin orice platformă pentru îndrumare personalizată - ia legătura cu noi chiar astăzi!"
+      shopContent: "Deblocați-vă potențialul și creați un viitor durabil cu servicii de consultanță de specialitate. Aflațik mai multe despre sustenabilitatea ecologică, performanță sportivă și life-coaching, oferim strategii personalizate pentru a vă ajuta să vă atingeți obiectivele și să aveți un impact pozitiv. Indiferent dacă doriți să vă îmbunătățiți starea de spirit, să vă creșteți performanța atletică sau să implementați practici durabile, vă oferim îndrumarea și sprijinul de care aveți nevoie. Transformă-ți viața și lumea din jurul tău — începe-ți călătoria către succes astăzi! Pentru mai multe detalii, vă rugăm să ne contactați pe oricare dintre conturile noastre de socializare. De asemenea, puteți susține proiectul nostru cu o donație unică pe IBAN-ul nostru sau prin Revolut. IBAN EUR (Cod BIC/SWIFT: REVOLT21): LT533250040670605509--IBAN RON: RO57BREL0005505362900100; Revolut: https://revolut.me/tabacalkr"
     }
   };
-
-  const youtubeUrl = "https://www.youtube.com/@ionutz-media";
-  const tiktokUrl = "https://www.tiktok.com/@ionutz.media";
-  const instagramUrl = "https://www.instagram.com/ionutz.media/";
-
-  const iconStyle = { margin: '0 10px', color: '#000', fontSize: '40px' };
 
   return (
     <Layout currentLanguage={language} toggleLanguage={toggleLanguage}>
@@ -193,27 +181,7 @@ const IndexPage = () => {
           </Zoom>
         </Fade>
       </div>
-      <div id="social" className="section">
-        <Fade>
-          <Zoom>
-            <h1>{content[language].social}</h1>
-            <div className="contentSection">
-              <p>{content[language].socialContent}</p>
-              <div>
-                <a href={youtubeUrl} target="_blank" rel="noopener noreferrer" style={{ ...iconStyle, color: '#FF0000' }}>
-                  <FaYoutube />
-                </a>
-                <a href={tiktokUrl} target="_blank" rel="noopener noreferrer" style={{ ...iconStyle, color: '#000000' }}>
-                  <FaTiktok />
-                </a>
-                <a href={instagramUrl} target="_blank" rel="noopener noreferrer" style={{ ...iconStyle, color: '#C13584' }}>
-                  <FaInstagram />
-                </a>
-              </div>
-            </div>
-          </Zoom>
-        </Fade>
-      </div>
+      
     </Layout>
   );
 };

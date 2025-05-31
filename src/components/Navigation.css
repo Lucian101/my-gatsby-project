@@ -130,3 +130,78 @@
   background-color: rgba(255, 255, 255, 0.2); /* Slightly more intense change on active */
   color: white; /* Keep text color white on active */
 }
+
+/* Follow Us Button */
+.follow-us {
+  position: relative;
+  font-weight: bold;
+}
+
+/* Social Icon Bar */
+.social-icons-bar {
+  display: none; /* Hidden by default */
+  gap: 10px;
+  position: absolute;
+  top: 100%; /* Align below the Follow Us button */
+  left: 0;
+  padding: 10px;
+  background: transparent; /* Transparent background */
+  border-radius: 5px;
+}
+
+.nav-button.follow-us:hover .social-icons-bar {
+  display: flex; /* Show when hovering over Follow Us */
+}
+
+/* Social Icons */
+.social-icon {
+  font-size: 20px; /* Icon size */
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Brand Colors */
+.youtube {
+  background: #FF0000;
+}
+
+.instagram {
+  background: #E4405F;
+}
+
+.tiktok {
+  background: #010101;
+}
+
+.facebook {
+  background: #1877F2;
+}
+
+.twitter {
+  background: #1DA1F2;
+}
+
+.social-icon.whatsapp {
+  background-color: #25D366; /* Official WhatsApp Green */
+  color: white;
+  border-radius: 50%; /* Makes it round */
+  padding: 1px; /* Controls icon size inside circle */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.social-icon.whatsapp:hover {
+  background-color: #1ebe5d; /* Slightly darker green on hover */
+}

@@ -232,3 +232,51 @@
   padding: 0;
   line-height: 1.8;
 }
+
+.navbar {
+  position: relative;
+}
+
+.social-navbar {
+  position: relative;
+  display: inline-block;
+}
+
+.navbar-btn {
+  background-color: #e0f7ff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.social-bar {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  top: 50px; /* Adjust this value to position below the button */
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.social-navbar:hover .social-bar {
+  opacity: 1;
+  visibility: visible;
+}
+
+.social-bar a {
+  color: #000;
+  text-decoration: none;
+}
+
+.social-bar a:hover {
+  color: #0073e6; /* Highlight color */
+}
+

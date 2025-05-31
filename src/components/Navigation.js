@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 import './Navigation.css';
 import logo from '../images/logo.png';
+import { FaYoutube, FaInstagram, FaTiktok, FaWhatsapp } from 'react-icons/fa'; // Import FontAwesome Icons
 
 const Navigation = ({ currentLanguage, toggleLanguage }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showSocialIcons, setShowSocialIcons] = useState(false); // New state for icon bar
 
   const buttonLabels = {
     en: {
@@ -27,6 +29,10 @@ const Navigation = ({ currentLanguage, toggleLanguage }) => {
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const toggleSocialIcons = () => {
+    setShowSocialIcons(!showSocialIcons); // Toggle icon bar
   };
 
   useEffect(() => {
@@ -60,9 +66,29 @@ const Navigation = ({ currentLanguage, toggleLanguage }) => {
       <ScrollLink to="shop" smooth={true} duration={500} className="nav-button" onClick={() => setMenuOpen(false)}>
         {buttonLabels[currentLanguage].shop}
       </ScrollLink>
-      <ScrollLink to="social" smooth={true} duration={500} className="nav-button" onClick={() => setMenuOpen(false)}>
+       
+      <div className="nav-button follow-us">
         {buttonLabels[currentLanguage].social}
-      </ScrollLink>
+        <div className="social-icons-bar">
+          <a href="https://www.youtube.com/@ionutzmedia" target="_blank" rel="noopener noreferrer" className="social-icon youtube">
+            <FaYoutube />
+          </a>
+          <a href="https://www.instagram.com/ionutz.media/" target="_blank" rel="noopener noreferrer" className="social-icon instagram">
+            <FaInstagram />
+          </a>
+          <a href="https://www.tiktok.com/@ionutz.media" target="_blank" rel="noopener noreferrer " className="social-icon tiktok">
+            <FaTiktok />
+          </a>
+          <a
+      href="https://wa.me/40747452627" // WhatsApp link with Romanian international number format
+      target="_blank"
+      rel="noopener noreferrer"
+      className="social-icon whatsapp"
+    >
+      <FaWhatsapp />
+    </a>
+        </div>
+      </div>
     </>
   );
 

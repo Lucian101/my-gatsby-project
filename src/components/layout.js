@@ -19,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
     top: 0;
     width: 100%;
     background: linear-gradient(to bottom, #007a99, #66ccff); /* Teal gradient */
-    border-bottom: 4px solid #b3ecff; /* Light blue shade on the edge */
+    border-bottom: 4px solid #77c7f4; /* Light blue shade on the edge */
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     z-index: 1000;
   }
