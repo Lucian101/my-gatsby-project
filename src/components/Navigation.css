@@ -149,10 +149,6 @@
   border-radius: 5px;
 }
 
-.nav-button.follow-us:hover .social-icons-bar {
-  display: flex; /* Show when hovering over Follow Us */
-}
-
 /* Social Icons */
 .social-icon {
   font-size: 20px; /* Icon size */
@@ -168,6 +164,33 @@
 
 .social-icon:hover {
   transform: scale(1.1);
+}
+
+/* When the button is clicked (adds .active class) */
+.nav-button.follow-us.active .social-icons-bar {
+  display: flex;
+  left: 100%; /* Position to the right of the button */
+  top: -5px;
+  background: transparent; /* Fully transparent */
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  box-shadow: none;
+  z-index: 9999;
+  animation: none; /* Optional: keep instant or add a fade/slide */
+  pointer-events: auto;
+}
+
+/* Animation */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* Brand Colors */

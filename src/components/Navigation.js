@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 import './Navigation.css';
 import logo from '../images/logo.png';
@@ -7,6 +7,9 @@ import { FaYoutube, FaInstagram, FaTiktok, FaWhatsapp } from 'react-icons/fa'; /
 const Navigation = ({ currentLanguage, toggleLanguage }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showSocialIcons, setShowSocialIcons] = useState(false); // New state for icon bar
+
+const [socialOpen, setSocialOpen] = useState(false);
+const followUsRef = useRef(null);
 
   const buttonLabels = {
     en: {
@@ -34,6 +37,19 @@ const Navigation = ({ currentLanguage, toggleLanguage }) => {
   const toggleSocialIcons = () => {
     setShowSocialIcons(!showSocialIcons); // Toggle icon bar
   };
+
+useEffect(() => {
+  const handleClickOutside = (event) => {
+    if (followUsRef.current && !followUsRef.current.contains(event.target)) {
+      setTimeout(() => setSocialOpen(false), 10000);
+    }
+  };
+
+  document.addEventListener("mousedown", handleClickOutside);
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+  };
+}, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -67,24 +83,33 @@ const Navigation = ({ currentLanguage, toggleLanguage }) => {
         {buttonLabels[currentLanguage].shop}
       </ScrollLink>
        
-      <div className="nav-button follow-us">
-        {buttonLabels[currentLanguage].social}
-        <div className="social-icons-bar">
-          <a href="https://www.youtube.com/@ionutzmedia" target="_blank" rel="noopener noreferrer" className="social-icon youtube">
-            <FaYoutube />
-          </a>
-          <a href="https://www.instagram.com/ionutz.media/" target="_blank" rel="noopener noreferrer" className="social-icon instagram">
-            <FaInstagram />
-          </a>
-          <a href="https://www.tiktok.com/@ionutz.media" target="_blank" rel="noopener noreferrer " className="social-icon tiktok">
-            <FaTiktok />
-          </a>
-          <a
-      href="https://wa.me/40747452627" // WhatsApp link with Romanian international number format
+      <div
+  className={`nav-button follow-us ${socialOpen ? "active" : ""}`}
+  onClick={() => setSocialOpen((prev) => !prev)}
+  ref={followUsRef}
+>
+  {buttonLabels[currentLanguage].social}
+
+  <div className="social-icons-bar"
+  
+  onClick={(e) => e.stopPropagation()}
+  >
+    <a href="https://www.youtube.com/@ionutzmedia" target="_blank" rel="noopener noreferrer" className="social-icon youtube">
+      <FaYoutube />
+    </a>
+    <a href="https://www.instagram.com/ionutz.media/" target="_blank" rel="noopener noreferrer" className="social-icon instagram">
+      <FaInstagram />
+    </a>
+    <a href="https://www.tiktok.com/@ionutz.media" target="_blank" rel="noopener noreferrer " className="social-icon tiktok">
+      <FaTiktok />
+    </a>
+    <a
+      href="https://wa.me/40747452627"
       target="_blank"
       rel="noopener noreferrer"
       className="social-icon whatsapp"
     >
+
       <FaWhatsapp />
     </a>
         </div>
