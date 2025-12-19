@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
+import { Link } from 'gatsby';
 import './Navigation.css';
 import logo from '../images/logo.png';
-import { FaYoutube, FaInstagram, FaTiktok, FaWhatsapp } from 'react-icons/fa'; // Import FontAwesome Icons
+import { FaYoutube, FaInstagram, FaTiktok, FaWhatsapp } from 'react-icons/fa';
+ // Import FontAwesome Icons
 
 const Navigation = ({ currentLanguage, toggleLanguage }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,6 +21,9 @@ const followUsRef = useRef(null);
       aboutme: "About me",
       shop: "Support us",
       social: "Follow us",
+      raw: "R.A.W. Bushcraft",
+      project: "Project",
+      
     },
     ro: {
       about: "Despre",
@@ -27,6 +32,8 @@ const followUsRef = useRef(null);
       aboutme: "Despre mine",
       shop: "Susține-ne",
       social: "Urmărește-ne",
+      project: "Proiect",
+      
     }
   };
 
@@ -65,8 +72,46 @@ useEffect(() => {
     };
   }, [menuOpen]);
 
+  <Link
+  to="/raw-bushcraft"
+  className="nav-button"
+  onClick={() => setMenuOpen(false)}
+>
+  {buttonLabels[currentLanguage].raw}
+</Link>
+
+;
+
+<Link
+  to="/project"
+  className="nav-button"
+  onClick={() => setMenuOpen(false)}
+>
+  {buttonLabels[currentLanguage].project}
+</Link>
+
+const isHome =
+  typeof window !== "undefined" && window.location.pathname === "/";
+
   const NavButtons = () => (
     <>
+
+ <Link
+      to="/raw-bushcraft"
+      className="nav-button"
+      onClick={() => setMenuOpen(false)}
+    >
+      {buttonLabels[currentLanguage].raw}
+    </Link>
+
+    <Link
+      to="/project"
+      className="nav-button"
+      onClick={() => setMenuOpen(false)}
+    >
+      {buttonLabels[currentLanguage].project}
+    </Link>
+
       <ScrollLink to="about" smooth={true} duration={500} className="nav-button" onClick={() => setMenuOpen(false)}>
         {buttonLabels[currentLanguage].about}
       </ScrollLink>
@@ -82,7 +127,7 @@ useEffect(() => {
       <ScrollLink to="shop" smooth={true} duration={500} className="nav-button" onClick={() => setMenuOpen(false)}>
         {buttonLabels[currentLanguage].shop}
       </ScrollLink>
-       
+
       <div
   className={`nav-button follow-us ${socialOpen ? "active" : ""}`}
   onClick={() => setSocialOpen((prev) => !prev)}

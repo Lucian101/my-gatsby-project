@@ -3,6 +3,7 @@ import Layout from '../components/layout';
 import { Fade, Zoom } from 'react-awesome-reveal';
 import './index.css'; // Ensure this is the correct path to your CSS file
 import './styles.css';
+import { Link } from 'gatsby';
  
 const IndexPage = () => {
   const [language, setLanguage] = useState('en');
@@ -93,7 +94,7 @@ const IndexPage = () => {
     en: {
       welcome: "Welcome to My Portfolio",
       about: "About our project",
-      aboutContent: "Nestled in the town called Galați, near the borders of Eastern Europe and within earshot of the war in Ukraine, our story begins on the banks of the Danube. Somehow in the midst of echoes coming from distant drones, a derelict field lay forgotten, overrun with the debris of a forgotten industry. But where some just saw a grave, we saw potential for renewal. Our journey started with a vision to salvage this neglected space and repurpose it for the community. With a rich history in basketball, we dedicated part of the field to a new half-court, bringing the sport back to life for enthusiasts and newcomers alike. A bit closer to the Danube, we transformed another section into a welcoming BBQ area, encouraging social gatherings and outdoor enjoyment. Here in Galați, we believe in the power of attentive citizenship. Our efforts emphasize ecology, sustainability, and health, fostering a community that thrives on active living and mutual respect for our environment. This space is a testament to what can be achieved when we come together with a shared purpose: to create a healthier, more sustainable future for all.",
+      aboutContent: "On the banks of the Danube in Galați, we reclaim neglected land by cleaning debris, managing invasive vegetation, and turning forgotten spaces into places for people and nature. The project began with a basketball half-court and a simple BBQ area for the community. Today, the focus continues through R.A.W. Bushcraft—Romanian Amateur Wilderness—where we build with sticks and found materials and work toward creating a birdwatch and wildlife observation place.",
       services: "Services",
       servicesContent: "We are a dedicated group of professionals offering top-notch video services (filming and editing). Whether you need captivating footage for your event, social media, or marketing campaigns, we've got you covered. But that's not all! If your party needs an extra touch of excitement, our talented Master of Ceremonies can turn any gathering into an unforgettable experience. Transform your events and marketing with our help. Contact us today through one of our social media outlets to learn more!",
       events: "Events",
@@ -137,6 +138,16 @@ const IndexPage = () => {
             <h1>{content[language].about}</h1>
             <div className="contentSection">
               <p>{content[language].aboutContent}</p>
+
+<Link
+  to="/raw-bushcraft"
+  className="nav-button"
+  style={{ display: "inline-block", marginTop: "0.75rem", marginLeft: "0.75rem" }}
+>
+  {"Explore R.A.W. Bushcraft"}&#x2192;
+
+</Link>
+
             </div>
           </Zoom>
         </Fade>
@@ -171,6 +182,9 @@ const IndexPage = () => {
           </Zoom>
         </Fade>
       </div>
+
+
+
       <div id="shop" className="section">
         <Fade>
           <Zoom>
