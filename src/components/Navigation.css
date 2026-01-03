@@ -228,3 +228,38 @@
 .social-icon.whatsapp:hover {
   background-color: #1ebe5d; /* Slightly darker green on hover */
 }
+
+@media (max-width: 768px) {
+  .follow-us {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .follow-us .social-icons-bar {
+    margin-top: 0.5rem;
+  }
+}
+
+/* MOBILE: in side-menu, show social icons UNDER the Follow Us button */
+@media (max-width: 600px) {
+  .side-menu .follow-us {
+    position: relative; /* ok */
+  }
+
+  .side-menu .follow-us .social-icons-bar {
+    position: static;        /* IMPORTANT: remove absolute positioning */
+    display: none;           /* keep hidden until active */
+    margin-top: 10px;
+    padding: 0;              /* optional: cleaner */
+    width: 100%;
+    flex-wrap: wrap;         /* allow wrap if needed */
+    gap: 10px;
+  }
+
+  .side-menu .nav-button.follow-us.active .social-icons-bar {
+    display: flex;
+    left: auto;              /* cancel left:100% */
+    top: auto;               /* cancel top:-5px */
+    justify-content: flex-start;
+  }
+}

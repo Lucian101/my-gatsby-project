@@ -3,7 +3,6 @@ import Layout from '../components/layout';
 import { Fade, Zoom } from 'react-awesome-reveal';
 import './index.css'; // Ensure this is the correct path to your CSS file
 import './styles.css';
-import { Link } from 'gatsby';
  
 const IndexPage = () => {
   const [language, setLanguage] = useState('en');
@@ -92,30 +91,124 @@ const IndexPage = () => {
 
   const content = {
     en: {
-      welcome: "Welcome to My Portfolio",
-      about: "About our project",
-      aboutContent: "On the banks of the Danube in Galați, we reclaim neglected land by cleaning debris, managing invasive vegetation, and turning forgotten spaces into places for people and nature. The project began with a basketball half-court and a simple BBQ area for the community. Today, the focus continues through R.A.W. Bushcraft—Romanian Amateur Wilderness—where we build with sticks and found materials and work toward creating a birdwatch and wildlife observation place.",
-      services: "Services",
-      servicesContent: "We are a dedicated group of professionals offering top-notch video services (filming and editing). Whether you need captivating footage for your event, social media, or marketing campaigns, we've got you covered. But that's not all! If your party needs an extra touch of excitement, our talented Master of Ceremonies can turn any gathering into an unforgettable experience. Transform your events and marketing with our help. Contact us today through one of our social media outlets to learn more!",
-      events: "Events",
-      eventsContent: "This summer we are thrilled to announce the launch of our open basketball half court. Join us for the grand reveal and enjoy a day of fun and community spirit! Follow us on social media for the latest updates and announcements.",
-      aboutme: "About me",
-      aboutmeContent: "Hi, I'm Ionuț Tăbăcaru and I'm the founder of this project. My journey began with a deep passion for nature and a commitment to sustainability. I believe in the transformative energy of direct contact with the natural world and how it can inspire and rejuvenate us. Beyond my love for nature, I am dedicated to creating vibrant communities. I thrive on bringing people together, fostering connections, and emphasizing the importance of education. Through this project, I aim to blend these passions, providing enriching experiences that highlight our shared values and collective creativity. Let's connect and create  extraordinary things together!",
-      shop: "Support us",
-      shopContent: "Unlock your potential and create a sustainable future with expert consulting and advisory services. Specializing in eco-sustainability, sports performance, and life coaching, we offer personalized strategies to help you achieve your goals and make a positive impact. Whether you're looking to enhance your personal well-being, boost your athletic performance, or implement sustainable practices, we provide the guidance and support you need. Transform your life and the world around you—start your journey to success today! For further details please contact us on any of our social media accounts. You can also support our project with a one-time donation on our IBAN or through Revolut. IBAN EUR (BIC/SWIFT Code: REVOLT21): LT533250040670605509--IBAN RON: RO57BREL0005505362900100; Revolut: https://revolut.me/tabacalkr"},
+  welcome: "Welcome to My Portfolio",
+  about: "About our project",
+  aboutContent:
+    "On the banks of the Danube in Galați, we reclaim neglected land by cleaning debris, managing invasive vegetation, and turning forgotten spaces into places for people and nature. The project began with a basketball half-court and a simple BBQ area for the community. Today, the focus continues through R.A.W. Bushcraft—Romanian Amateur Wilderness—where we build with sticks and found materials and work toward creating a birdwatch and wildlife observation place.",
+
+  rawButton: "Explore R.A.W. Bushcraft",
+  ecomText: "This project is also supported through a separate e-commerce branch.",
+  emagButton: "Visit our eMAG store",
+
+  services: "Services",
+  servicesCards: [
+    {
+      title: "Community Regeneration",
+      items: [
+        "Cleaning land",
+        "Removing parasite vegetation",
+        "Repurposing spaces",
+        "Sports & social areas",
+      ],
+    },
+    {
+      title: "Media & Documentation",
+      items: ["Video storytelling", "YouTube-first content", "Education through real action"],
+    },
+    {
+      title: "Wilderness & Ecology",
+      items: ["Stick-built structures", "Found materials", "Birdwatch habitat creation"],
+    },
+  ],
+
+  events: "Events",
+  eventsContent:
+    "This summer we are thrilled to announce the launch of our open basketball half court. Join us for the grand reveal and enjoy a day of fun and community spirit! Follow us on social media for the latest updates and announcements.",
+
+  aboutme: "About me",
+  aboutmeContent:
+    "Hi, I'm Ionuț Tăbăcaru and I'm the founder of this project. My journey began with a deep passion for nature and a commitment to sustainability. I believe in the transformative energy of direct contact with the natural world and how it can inspire and rejuvenate us. Beyond my love for nature, I am dedicated to creating vibrant communities. I thrive on bringing people together, fostering connections, and emphasizing the importance of education. Through this project, I aim to blend these passions, providing enriching experiences that highlight our shared values and collective creativity. Let's connect and create extraordinary things together!",
+
+  shop: "Support us",
+  supportCards: [
+    {
+      title: "Consulting & Guidance",
+      items: [
+        "Eco-sustainability consulting",
+        "Sports performance guidance",
+        "Life coaching & planning",
+        "Project-based advisory",
+      ],
+    },
+    {
+      title: "Direct Support & Donations",
+      items: ["One-time donations", "Material & equipment support", "Tools for field work", "Infrastructure development"],
+    },
+    {
+      title: "Community & Partnerships",
+      items: ["Local collaborations", "Volunteer involvement", "Educational initiatives", "Long-term partnerships"],
+    },
+  ],
+  supportButton: "Support the project",
+},
+
     ro: {
-      welcome: "Bine ați venit la portofoliul meu",
-      about: "Despre proiect",
-      aboutContent: "Așezați în târgul Galațiului, aproape de granițele Europei de Est și la o aruncătură de băț de războiul din Ucraina, povestea noastră începe pe malurile Dunării. Cumva în mijlocul ecourilor dronelor îndepărtate, un teren abandonat zăcea uitat, împăienjenit de tot felul de resturi ale unei industrii de mult timp uitate. Dar unde alții au văzut o ruină, noi am înțeles că există un potențial al reînnoirii. Călătoria noastră a început cu o viziune de a salva acest spațiu neglijat și de a-l transforma pentru comunitatea locală. Cu o istorie bogată în domeniul baschetului, am dedicat o parte a terenului pentru realizarea unui half-court pentru practicarea baschetului, aducând sportul la viață pentru toți cei entuziaști și nou-veniți deopotrivă. Între teren și Dunăre, am transformat o altă porțiune într-un spațiu BBQ, încurajând întrunirile sociale și distracția în aer liber. Aici, în Galați, credem în puterea cetățeniei participative. Eforturile noastre pun accent pe ecologie și sănătate, promovând o comunitate care prosperă prin viață activă și respect reciproc pentru mediul nostru. Acest spațiu este o mărturie a ceea ce poate fi realizat atunci când ne unim cu un scop comun: crearea unui viitor mai bun și mai sustenabil pentru toți.",
-      services: "Servicii",
-      servicesContent: "Suntem un grup dedicat de profesioniști care oferă servicii video de top, producție și post-producție (filmare și editare). Indiferent dacă aveți nevoie de imagini captivante pentru evenimente, rețele sociale sau campanii de marketing, noi putem fi acolo pentru voi. Dar asta nu e tot! Dacă petrecerea dvs. are nevoie de un plus de energie, talentatul nostru Maestru de Ceremonii poate transforma orice reuniune într-o experiență de neuitat. Transformați-vă evenimentele și marketingul cu ajutorul nostru. Contactați-ne pe una din paginile noastre de social media pentru a afla mai multe!",
-      events: "Evenimente",
-      eventsContent: "În această vară suntem încântați să anunțăm lansarea terenului nostru de baschet. Alăturați-vă comunității noastre pentru a afla mai multe despre data deschiderii și bucurați-vă de o zi plină de distracție și spirit comunitar! Urmăriți-ne pe rețelele sociale pentru cele mai recente actualizări și anunțuri. Nu ratați evenimentele interesante pe care le avem pregătite pentru dvs.!",
-      aboutme: "Despre mine",
-      aboutmeContent: "Salut, sunt Ionuț Tăbăcaru și sunt fondatorul acestui proiect. Călătoria mea a început datorită unei pasiuni profunde pentru natură, laolaltă cu un angajament față de sustenabilitate. Cred în energia transformatoare a contactului direct cu universul naturii și în modul în care acesta ne poate inspira și întineri. Dincolo de această dragostea, sunt pasionat de crearea de comunități. Mă bucur să aduc oamenii împreună, să stimulez conexiunile și să subliniez importanța educației. Prin acest proiect, îmi propun să îmbin aceste pasiuni, oferind experiențe îmbogățitoare care evidențiază valorile noastre comune și creativitatea colectivă. Hai să ne conectăm și să creăm împreună lucruri extraordinare!",
-      shop: "Susține-ne",
-      shopContent: "Deblocați-vă potențialul și creați un viitor durabil cu servicii de consultanță de specialitate. Aflațik mai multe despre sustenabilitatea ecologică, performanță sportivă și life-coaching, oferim strategii personalizate pentru a vă ajuta să vă atingeți obiectivele și să aveți un impact pozitiv. Indiferent dacă doriți să vă îmbunătățiți starea de spirit, să vă creșteți performanța atletică sau să implementați practici durabile, vă oferim îndrumarea și sprijinul de care aveți nevoie. Transformă-ți viața și lumea din jurul tău — începe-ți călătoria către succes astăzi! Pentru mai multe detalii, vă rugăm să ne contactați pe oricare dintre conturile noastre de socializare. De asemenea, puteți susține proiectul nostru cu o donație unică pe IBAN-ul nostru sau prin Revolut. IBAN EUR (Cod BIC/SWIFT: REVOLT21): LT533250040670605509--IBAN RON: RO57BREL0005505362900100; Revolut: https://revolut.me/tabacalkr"
-    }
+  welcome: "Bine ați venit la portofoliul meu",
+  about: "Despre proiect",
+  aboutContent:
+    "Pe malurile Dunării, în Galați, recuperăm terenuri neglijate prin curățarea deșeurilor, gestionarea vegetației invazive și transformarea spațiilor uitate în locuri pentru oameni și natură. Proiectul a început cu un half-court de baschet și o zonă BBQ simplă, pentru comunitate. Astăzi, direcția continuă prin R.A.W. Bushcraft — Romanian Amateur Wilderness — unde construim cu bețe și materiale găsite și lucrăm la amenajarea unui loc de birdwatching și observare a faunei.",
+
+  rawButton: "Descoperă R.A.W. Bushcraft",
+  ecomText: "Acest proiect este susținut și printr-o ramură separată de e-commerce.",
+  emagButton: "Vezi magazinul nostru eMAG",
+
+  services: "Servicii",
+  servicesCards: [
+    {
+      title: "Regenerare comunitară",
+      items: [
+        "Curățarea terenului",
+        "Îndepărtarea vegetației invazive/parazite",
+        "Reamenajarea spațiilor",
+        "Zone sportive și sociale",
+      ],
+    },
+    {
+      title: "Media & documentare",
+      items: ["Povestea prin video", "Conținut cu prioritate pentru YouTube", "Educație prin acțiune reală"],
+    },
+    {
+      title: "Natură & ecologie",
+      items: ["Structuri construite din bețe", "Materiale găsite/recuperate", "Amenajarea unui habitat pentru birdwatching"],
+    },
+  ],
+
+  events: "Evenimente",
+  eventsContent:
+    "În această vară suntem încântați să anunțăm lansarea terenului nostru de baschet...",
+
+  aboutme: "Despre mine",
+  aboutmeContent:
+    "Salut, sunt Ionuț Tăbăcaru și sunt fondatorul acestui proiect. Călătoria mea a început datorită unei pasiuni profunde pentru natură, laolaltă cu un angajament față de sustenabilitate. Cred în energia transformatoare a contactului direct cu universul naturii și în modul în care acesta ne poate inspira și întineri. Dincolo de această dragostea, sunt pasionat de crearea de comunități. Mă bucur să aduc oamenii împreună, să stimulez conexiunile și să subliniez importanța educației. Prin acest proiect, îmi propun să îmbin aceste pasiuni, oferind experiențe îmbogățitoare care evidențiază valorile noastre comune și creativitatea colectivă. Hai să ne conectăm și să creăm împreună lucruri extraordinare!",
+
+  shop: "Susține-ne",
+  supportCards: [
+    {
+      title: "Consultanță & îndrumare",
+      items: ["Consultanță în eco-sustenabilitate", "Îndrumare pentru performanță sportivă", "Life coaching & planificare", "Consultanță pe proiect"],
+    },
+    {
+      title: "Sprijin direct & donații",
+      items: ["Donații punctuale", "Sprijin cu materiale & echipamente", "Unelte pentru munca din teren", "Dezvoltare de infrastructură"],
+    },
+    {
+      title: "Comunitate & parteneriate",
+      items: ["Colaborări locale", "Implicarea voluntarilor", "Inițiative educaționale", "Parteneriate pe termen lung"],
+    },
+  ],
+  supportButton: "Susține proiectul",
+},
+
   };
 
   return (
@@ -139,14 +232,37 @@ const IndexPage = () => {
             <div className="contentSection">
               <p>{content[language].aboutContent}</p>
 
-<Link
-  to="/raw-bushcraft"
-  className="nav-button"
-  style={{ display: "inline-block", marginTop: "0.75rem", marginLeft: "0.75rem" }}
->
-  {"Explore R.A.W. Bushcraft"}&#x2192;
+<div style={{ marginTop: "1.25rem" }}>
+  <a
+    href="https://linktr.ee/rawbushcraft"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="nav-button"
+    style={{ display: "inline-block" }}
+  >
+    {content[language].rawButton}
+  </a>
+</div>
+<div style={{ marginTop: "1.5rem", opacity: 0.9 }}>
+  <p style={{ marginBottom: "0.75rem" }}>
+    {content[language].ecomText}
 
-</Link>
+  </p>
+
+  <a
+    href="https://www.emag.ro/cscrmqn/226207/v?ref=see_vendor_page"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="nav-button"
+    style={{ display: "inline-block" }}
+  >
+    {content[language].emagButton}
+
+  </a>
+  
+</div>
+
+
 
             </div>
           </Zoom>
@@ -156,22 +272,23 @@ const IndexPage = () => {
         <Fade>
           <Zoom>
             <h1>{content[language].services}</h1>
-            <div className="contentSection">
-              <p>{content[language].servicesContent}</p>
-            </div>
+            <div className="contentSection services-grid">
+  {content[language].servicesCards.map((card) => (
+    <div className="service-card" key={card.title}>
+      <h3>{card.title}</h3>
+      <ul>
+        {card.items.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  ))}
+</div>
+
           </Zoom>
         </Fade>
       </div>
-      <div id="events" className="section">
-        <Fade>
-          <Zoom>
-            <h1>{content[language].events}</h1>
-            <div className="contentSection">
-              <p>{content[language].eventsContent}</p>
-            </div>
-          </Zoom>
-        </Fade>
-      </div>
+      
       <div id="aboutme" className="section">
         <Fade>
           <Zoom>
@@ -189,9 +306,32 @@ const IndexPage = () => {
         <Fade>
           <Zoom>
             <h1>{content[language].shop}</h1>
-            <div className="contentSection">
-              <p>{content[language].shopContent}</p>
-            </div>
+            <div className="contentSection services-grid">
+  {content[language].supportCards.map((card) => (
+    <div className="service-card" key={card.title}>
+      <h3>{card.title}</h3>
+      <ul>
+        {card.items.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  ))}
+</div>
+
+<div style={{ marginTop: "2rem" }}>
+  <a
+    href="https://revolut.me/tabacalkr"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="nav-button"
+    style={{ display: "inline-block" }}
+  >
+    {content[language].supportButton}
+
+  </a>
+</div>
+
           </Zoom>
         </Fade>
       </div>

@@ -21,8 +21,6 @@ const followUsRef = useRef(null);
       aboutme: "About me",
       shop: "Support us",
       social: "Follow us",
-      raw: "R.A.W. Bushcraft",
-      project: "Project",
       
     },
     ro: {
@@ -72,23 +70,7 @@ useEffect(() => {
     };
   }, [menuOpen]);
 
-  <Link
-  to="/raw-bushcraft"
-  className="nav-button"
-  onClick={() => setMenuOpen(false)}
->
-  {buttonLabels[currentLanguage].raw}
-</Link>
-
-;
-
-<Link
-  to="/project"
-  className="nav-button"
-  onClick={() => setMenuOpen(false)}
->
-  {buttonLabels[currentLanguage].project}
-</Link>
+  
 
 const isHome =
   typeof window !== "undefined" && window.location.pathname === "/";
@@ -96,21 +78,7 @@ const isHome =
   const NavButtons = () => (
     <>
 
- <Link
-      to="/raw-bushcraft"
-      className="nav-button"
-      onClick={() => setMenuOpen(false)}
-    >
-      {buttonLabels[currentLanguage].raw}
-    </Link>
 
-    <Link
-      to="/project"
-      className="nav-button"
-      onClick={() => setMenuOpen(false)}
-    >
-      {buttonLabels[currentLanguage].project}
-    </Link>
 
       <ScrollLink to="about" smooth={true} duration={500} className="nav-button" onClick={() => setMenuOpen(false)}>
         {buttonLabels[currentLanguage].about}
@@ -118,9 +86,7 @@ const isHome =
       <ScrollLink to="services" smooth={true} duration={500} className="nav-button" onClick={() => setMenuOpen(false)}>
         {buttonLabels[currentLanguage].services}
       </ScrollLink>
-      <ScrollLink to="events" smooth={true} duration={500} className="nav-button" onClick={() => setMenuOpen(false)}>
-        {buttonLabels[currentLanguage].events}
-      </ScrollLink>
+      
       <ScrollLink to="aboutme" smooth={true} duration={500} className="nav-button" onClick={() => setMenuOpen(false)}>
         {buttonLabels[currentLanguage].aboutme}
       </ScrollLink>

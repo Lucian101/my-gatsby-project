@@ -280,3 +280,36 @@
   color: #0073e6; /* Highlight color */
 }
 
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.service-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.service-card h3 {
+  margin-bottom: 1rem;
+  color: #007a99;
+}
+
+.service-card ul {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.service-card li {
+  margin-bottom: 0.5rem;
+}
